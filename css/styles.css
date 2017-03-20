@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  max-width: 100%;
+}
+
+hr {
+  margin: 0;
+  border-color: #200;
+  box-shadow: 0 0 5px #555;
+}
+
+div {
+  margin: 0;
+}
+
+.nav.nav-pills {
+  position: fixed;
+  background-color: #444;
+  width: 100%; 
+}
+
+.intro {
+  background: url("../img/background.jpg");
+  min-height: 100vh;
+}
+
+.intro div {
+  background: rgba(30, 30, 30, 0.5);
+  height: 100vh;
+  color: white;
+}
+
+.half {
+  float: left;
+  width: 50%;
+  height: 100vh;
+  text-align: center;
+}
+
+.left {
+  background-color: rgba(40, 0, 0, 0.9);
+}
+
+.right {
+  background-color: rgba(50, 0, 0, 0.9);
+}
+
+.pictureFrame {
+  text-align: center;
+}
+
+.pictureFrame img {
+  border-radius: 50%;
+  box-shadow: 0 0 10px #555;
+  width: 200px;
+  margin-top: 10%;
+}
+
+.pictureFrame h3, .pictureFrame p {
+  text-shadow: 0 0 7px #555;
+}
+
+.container {
+  min-height: 100vh;
+  margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    max-width: 1000px;
+  }
+  .half {
+    width: 100%;
+    box-shadow: 0 0 5px #333;
+    height: 50vh;
+  }
+}
+
+/*progress circles*/
+  @-webkit-keyframes
+  load { 0% {
+  stroke-dashoffset:0
+  }
+  }
+  @-moz-keyframes
+  load { 0% {
+  stroke-dashoffset:0
+  }
+  }
+  @keyframes
+  load { 0% {
+  stroke-dashoffset:0
+  }
+  }
+
+.progress {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+}
+
+.progress>li {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: #93A2AC;
+  font-family: Lato;
+  font-weight: 100;
+  margin: 2rem;
+}
+
+.progress>li:before {
+  content: attr(data-name);
+  position: absolute;
+  width: 100%;
+  bottom: -2rem;
+  font-weight: 400;
+}
+
+.progress>li:after {
+  content: attr(data-percent);
+  position: absolute;
+  width: 100%;
+  top: 2.5rem;
+  left: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.progress svg {
+  width: 7rem;
+  height: 7rem;
+}
+
+.progress svg:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+}
+
+.progress svg:nth-child(2) path {
+  fill: none;
+  stroke-width: 3;
+  stroke-dasharray: 629;
+  stroke: rgba(0, 0, 0, 0.9);
+  -webkit-animation: load 2s;
+  -moz-animation: load 2s;
+  -o-animation: load 2s;
+  animation: load 2s;
+}
