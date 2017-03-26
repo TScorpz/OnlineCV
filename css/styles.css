@@ -1,47 +1,68 @@
-body {
+html, body {
   margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 hr {
   margin: 0;
-  border-color: #200;
+  border-color: #3a0000;
+  border-style: solid;
   box-shadow: 0 0 5px #555;
 }
 
-div {
-  margin: 0;
+h1 {
+  text-shadow: 0 0 3px #222;
+  color: white;
 }
 
-.nav.nav-pills {
+p {
+  color: white;
+}
+
+.nav-pills {
   position: fixed;
-  background-color: #444;
-  width: 100%; 
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 0;
+  width: 100%;
 }
 
 .intro {
   background: url("../img/background.jpg");
-  min-height: 100vh;
 }
 
 .intro div {
   background: rgba(30, 30, 30, 0.5);
+  min-height: 500px;
   height: 100vh;
   color: white;
+}
+
+.content {
+  margin: 0;
 }
 
 .half {
   float: left;
   width: 50%;
+  min-height: 500px;
   height: 100vh;
   text-align: center;
-}
-
-.left {
+  padding-top: 50px;
   background-color: rgba(40, 0, 0, 0.9);
+  box-shadow: inset 0 0 15px #300;
 }
 
-.right {
+.half p {
+  margin: 5px;
+}
+
+.lighter {
   background-color: rgba(50, 0, 0, 0.9);
 }
 
@@ -57,41 +78,26 @@ div {
 }
 
 .pictureFrame h3, .pictureFrame p {
+  font-family: 'Averia Serif Libre', cursive;
   text-shadow: 0 0 7px #555;
 }
 
-.container {
-  min-height: 100vh;
-  margin: 0;
-}
-
-@media screen and (max-width: 1000px) {
-  .container {
-    max-width: 1000px;
-  }
-  .half {
-    width: 100%;
-    box-shadow: 0 0 5px #333;
-    height: 50vh;
-  }
-}
-
 /*progress circles*/
-  @-webkit-keyframes
-  load { 0% {
-  stroke-dashoffset:0
-  }
-  }
-  @-moz-keyframes
-  load { 0% {
-  stroke-dashoffset:0
-  }
-  }
-  @keyframes
-  load { 0% {
-  stroke-dashoffset:0
-  }
-  }
+@-webkit-keyframes
+animate { 0% {
+stroke-dashoffset:0
+}
+}
+@-moz-keyframes
+animate { 0% {
+stroke-dashoffset:0
+}
+}
+@keyframes
+animate { 0% {
+stroke-dashoffset:0
+}
+}
 
 .progress {
   position: relative;
@@ -145,11 +151,119 @@ div {
 
 .progress svg:nth-child(2) path {
   fill: none;
-  stroke-width: 3;
+  stroke-width: 5;
   stroke-dasharray: 629;
   stroke: rgba(0, 0, 0, 0.9);
-  -webkit-animation: load 2s;
-  -moz-animation: load 2s;
-  -o-animation: load 2s;
-  animation: load 2s;
+}
+
+.progress.animate svg:nth-child(2) path {
+  -webkit-animation: animate 2s;
+  -moz-animation: animate 2s;
+  -o-animation: animate 2s;
+  animation: animate 2s;
+}
+
+/* For computer windows narrower than 1000px */
+@media screen and (max-width: 1000px) {
+  .half {
+    width: 100%;
+    box-shadow: 0 0 5px #333;
+    height: 100vh;
+  }
+  .pictureFrame img {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-device-width: 1000px) and (orientation: portrait) and (min-resolution: 164dpi) {
+  .container {
+    max-width: 1000px;
+  }
+  .half {
+    width: 100%;
+    box-shadow: 0 0 5px #333;
+    height: 100vh;
+    background-color: #159;
+  }
+  .progress svg {
+    width: 4rem;
+    height: 4rem;
+  }
+  .nav.nav-pills {
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .pictureFrame img {
+    margin-top: 25%;
+  }
+  .progress>li:after {
+    top: 1.3rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-device-width: 500px) and (orientation: landscape) and (max-resolution: 230dpi) {
+  .intro {
+    height: 200vh;
+  }
+  .intro div {
+    height: 200vh;
+  }
+  .half {
+    width: 100%;
+    box-shadow: 0 0 5px #333;
+    height: 200vh;
+    background-color: #440;
+  }
+  .progress svg {
+    width: 4rem;
+    height: 4rem;
+  }
+  .nav.nav-pills {
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .pictureFrame img {
+    margin-top: 10%;
+  }
+  .progress>li:after {
+    top: 1.3rem;
+    font-size: 1rem;
+  }
+}
+
+/*----------Floating animation----------*/
+.floating {
+	animation-name: floating;
+	-webkit-animation-name: floating;
+
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(0%);
+	}
+	50% {
+		transform: translateY(8%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(0%);
+	}
+	50% {
+		-webkit-transform: translateY(8%);
+	}
+	100% {
+		-webkit-transform: translateY(0%);
+	}
 }

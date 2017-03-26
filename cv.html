@@ -4,18 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jevgenij Dachno Online Resume</title>
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
   <link href="css/bootstrap.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
 </head>
-<body>
-  <ul class="nav nav-pills">
-    <li class="active"><a href="#">Intro</a></li>
-    <li><a href="#">Experience</a></li>
-    <li><a href="#">Skills</a></li>
-    <li><a href="#">Education</a></li>
-    <li><a href="#">Contacts</a></li>
-  </ul>
-  <div class="intro">
+<body data-spy="scroll" data-target=".navbar" data-offset="200">
+
+  <div class="navbar">
+    <ul class="nav nav-pills" role="navigation">
+      <li class="active"><a href="#intro">Intro</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+  </div>
+
+  <div class="intro" id="intro">
     <div>
       <div class="pictureFrame">
         <img src="img/profilePic.jpg" />
@@ -25,14 +33,21 @@
     </div>
   </div>
   <hr>
-  <div class="container">
-    <div class="half left">
+
+  <div class="content">
+    <div class="half" id="experience">
       <h1>Experience</h1>
       <p>
-        lalal
+        2013 - 2014 Teltonika
+      </p>
+      <p>
+        2014 - 2016 Angelas verslui
+      </p>
+      <p>
+        2016 - present Apynio triumfas
       </p>
     </div>
-    <div class="half right">
+    <div class="half lighter" id="skills">
       <h1>Skills</h1>
       <p>
         <ul class="progress">
@@ -88,22 +103,28 @@
     </div>
   </div>
   <hr>
-  <div class="container">
-    <div class="half right">
+
+  <div class="content">
+    <div class="half lighter" id="education">
       <h1>Education</h1>
       <p>
-        lalal
+        2009 - 2013 Lithuanian University of Educational Sciences
+      </p>
+      <p>
+        2016 - 2017 IT Mokykla - Front End Development
       </p>
     </div>
-    <div class="half left">
-      <h1>Contacts</h1>
-      <p>
-        asfasfasff
-      </p>
+    <div class="half" id="contacts">
+      <h1 class="floating">Contact me!</h1>
+      <p>E-mail: j.dachno@gmail.com</p>
+      <p>Phone number: +37066267815</p>
+      <p>Facebook profile.</p>
+      <p>Linkedin profile.</p>
+      <p>Github.</p>
     </div>
   </div>
 
-  <svg width="0" height="0">
+  <svg style="display: block;" width="0" height="0">
   <defs>
     <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
       <stop stop-color="#618099"/>
@@ -131,5 +152,7 @@
     </linearGradient>
   </defs>
   </svg>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
