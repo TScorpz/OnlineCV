@@ -1,6 +1,5 @@
 html, body {
   margin: 0;
-  padding: 0;
 }
 body {
   position: relative;
@@ -10,41 +9,34 @@ body {
 
 hr {
   margin: 0;
-  border-color: #3a0000;
+  border-color: rgba(0, 0, 0, 0.6);
   border-style: solid;
-  box-shadow: 0 0 5px #555;
+  box-shadow: 0 0 5px #335;
 }
 
 h1 {
-  text-shadow: 0 0 3px #222;
-  color: white;
-}
-
-p {
-  color: white;
+  text-shadow: 0 0 3px #300;
+  color: #300;
 }
 
 .nav-pills {
   position: fixed;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   margin-top: 0;
   width: 100%;
 }
 
 .intro {
-  background: url("../img/background.jpg");
+  background: url("../img/bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .intro div {
-  background: rgba(30, 30, 30, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   min-height: 500px;
   height: 100vh;
-  color: white;
-}
-
-.content {
-  margin: 0;
 }
 
 .half {
@@ -53,17 +45,26 @@ p {
   min-height: 500px;
   height: 100vh;
   text-align: center;
-  padding-top: 50px;
-  background-color: rgba(40, 0, 0, 0.9);
-  box-shadow: inset 0 0 15px #300;
+  background-color: #eee;
+  box-shadow: inset 0 0 10px #335;
+}
+
+.half h1 {
+  margin-top: 100px;
 }
 
 .half p {
-  margin: 5px;
+  margin: 5px 30px;
+  line-height: 3em;
+}
+
+.half#contacts a img {
+  width: 32px;
+  margin-right: 1em;
 }
 
 .lighter {
-  background-color: rgba(50, 0, 0, 0.9);
+  background-color: #ddd;
 }
 
 .pictureFrame {
@@ -72,7 +73,7 @@ p {
 
 .pictureFrame img {
   border-radius: 50%;
-  box-shadow: 0 0 10px #555;
+  box-shadow: 0 0 15px #300;
   width: 200px;
   margin-top: 10%;
 }
@@ -80,6 +81,7 @@ p {
 .pictureFrame h3, .pictureFrame p {
   font-family: 'Averia Serif Libre', cursive;
   text-shadow: 0 0 7px #555;
+  color: white;
 }
 
 /*progress circles*/
@@ -109,34 +111,23 @@ stroke-dashoffset:0
 .progress>li {
   display: inline-block;
   position: relative;
-  text-align: center;
-  color: #93A2AC;
   font-family: Lato;
   font-weight: 100;
-  margin: 2rem;
+  margin: 2em;
 }
 
 .progress>li:before {
   content: attr(data-name);
   position: absolute;
   width: 100%;
-  bottom: -2rem;
-  font-weight: 400;
-}
-
-.progress>li:after {
-  content: attr(data-percent);
-  position: absolute;
-  width: 100%;
-  top: 2.5rem;
-  left: 0;
-  font-size: 1.5rem;
-  text-align: center;
+  bottom: -2em;
+  font-weight: 600;
+  color: #400;
 }
 
 .progress svg {
-  width: 7rem;
-  height: 7rem;
+  width: 7em;
+  height: 7em;
 }
 
 .progress svg:nth-child(2) {
@@ -151,9 +142,9 @@ stroke-dashoffset:0
 
 .progress svg:nth-child(2) path {
   fill: none;
-  stroke-width: 5;
+  stroke-width: 11;
   stroke-dasharray: 629;
-  stroke: rgba(0, 0, 0, 0.9);
+  stroke: #ccc;
 }
 
 .progress.animate svg:nth-child(2) path {
@@ -163,72 +154,74 @@ stroke-dashoffset:0
   animation: animate 2s;
 }
 
-/* For computer windows narrower than 1000px */
+/* For screens narrower than 1000px */
 @media screen and (max-width: 1000px) {
   .half {
     width: 100%;
-    box-shadow: 0 0 5px #333;
     height: 100vh;
   }
   .pictureFrame img {
-    margin-top: 100px;
+    margin-top: 10em;
   }
 }
 
-@media screen and (max-device-width: 1000px) and (orientation: portrait) and (min-resolution: 164dpi) {
-  .container {
-    max-width: 1000px;
-  }
-  .half {
-    width: 100%;
-    box-shadow: 0 0 5px #333;
-    height: 100vh;
-    background-color: #159;
-  }
+/*tablets*/
+@media screen and (min-device-width: 661px) and (max-device-width: 1000px) and (orientation: portrait) {
   .progress svg {
-    width: 4rem;
-    height: 4rem;
+    width: 7em;
+    height: 7em;
   }
   .nav.nav-pills {
-    font-size: 10px;
     font-weight: bold;
   }
   .pictureFrame img {
     margin-top: 25%;
   }
-  .progress>li:after {
-    top: 1.3rem;
-    font-size: 1rem;
-  }
 }
 
-@media screen and (max-device-width: 500px) and (orientation: landscape) and (max-resolution: 230dpi) {
+/*Smartphones in portrait view*/
+@media screen and (max-device-width: 660px) and (orientation: portrait) {
   .intro {
-    height: 200vh;
+    height: 100vh;
   }
   .intro div {
-    height: 200vh;
+    height: 100vh;
+  }
+  .half h1 {
+    margin-top: 15%;
   }
   .half {
     width: 100%;
-    box-shadow: 0 0 5px #333;
-    height: 200vh;
-    background-color: #440;
+    height: 100vh;
+  }
+  .progress {
+    margin-top: 0;
   }
   .progress svg {
-    width: 4rem;
-    height: 4rem;
+    width: 3em;
   }
   .nav.nav-pills {
-    font-size: 10px;
+    font-size: 0.8em;
     font-weight: bold;
   }
   .pictureFrame img {
+    margin-top: 20%;
+  }
+  .nav > li > a {
+    padding: 7px 8px;
+  }
+}
+/*Smartphones in landscape view*/
+@media screen and (max-device-width: 660px) and (orientation: landscape) {
+  .half h1 {
+    margin-top: 1.2em;
+  }
+  .pictureFrame img {
+    width: 120px;
     margin-top: 10%;
   }
-  .progress>li:after {
-    top: 1.3rem;
-    font-size: 1rem;
+  .progress svg {
+    width: 5em;
   }
 }
 
@@ -249,7 +242,7 @@ stroke-dashoffset:0
 		transform: translateY(0%);
 	}
 	50% {
-		transform: translateY(8%);
+		transform: translateY(10%);
 	}
 	100% {
 		transform: translateY(0%);
@@ -258,12 +251,124 @@ stroke-dashoffset:0
 
 @-webkit-keyframes floating {
 	0% {
-		-webkit-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
 	}
 	50% {
-		-webkit-transform: translateY(8%);
+    -webkit-transform: translateY(10%);
 	}
 	100% {
-		-webkit-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+	}
+}
+
+/*----------Slide right animation----------*/
+.slideRight{
+	animation-name: slideRight;
+	-webkit-animation-name: slideRight;
+
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+
+	visibility: visible !important;
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(0%);
+	}
+	50%{
+		transform: translateX(4%);
+	}
+	65%{
+		transform: translateX(-4%);
+	}
+	80%{
+		transform: translateX(4%);
+	}
+	95%{
+		transform: translateX(-1%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@-webkit-keyframes slideRight {
+	0% {
+		-webkit-transform: translateX(0%);
+	}
+	50%{
+		-webkit-transform: translateX(4%);
+	}
+	65%{
+		-webkit-transform: translateX(-2%);
+	}
+	80%{
+		-webkit-transform: translateX(2%);
+	}
+	95%{
+		-webkit-transform: translateX(-1%);
+	}
+	100% {
+		-webkit-transform: translateX(0%);
+	}
+}
+
+/*----------Slide left animation----------*/
+.slideLeft{
+	animation-name: slideLeft;
+	-webkit-animation-name: slideLeft;
+
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+
+	visibility: visible !important;
+}
+
+@keyframes slideLeft {
+	0% {
+		transform: translateX(0%);
+	}
+	50%{
+		transform: translateX(-4%);
+	}
+	65%{
+		transform: translateX(2%);
+	}
+	80%{
+		transform: translateX(-2%);
+	}
+	95%{
+		transform: translateX(1%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@-webkit-keyframes slideLeft {
+	0% {
+		-webkit-transform: translateX(0%);
+	}
+	50%{
+		-webkit-transform: translateX(-4%);
+	}
+	65%{
+		-webkit-transform: translateX(2%);
+	}
+	80%{
+		-webkit-transform: translateX(-2%);
+	}
+	95%{
+		-webkit-transform: translateX(1%);
+	}
+	100% {
+		-webkit-transform: translateX(0%);
 	}
 }
